@@ -10,7 +10,8 @@ export default function Home() {
 
   const login = async (e: React.FormEvent) => {
     e.preventDefault();
-    const res = await fetch('http://localhost:8000/api/auth/login', {
+    // 17 LIVE BACKEND URL
+    const res = await fetch('https://task-magic-api.onrender.com/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
@@ -27,7 +28,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 flex items-center justify-center p-6">
       <div className="w-full max-w-md">
-        {/* logo + title */}
         <div className="text-center mb-8">
           <div className="mx-auto mb-4 w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg">
             <span className="text-2xl text-white">✨</span>
@@ -36,7 +36,6 @@ export default function Home() {
           <p className="text-sm text-purple-700 mt-1">Drag, tick, add—your creative space.</p>
         </div>
 
-        {/* card */}
         <div className="bg-white/70 backdrop-blur-xl rounded-3xl p-8 shadow-2xl ring-1 ring-black/5">
           <form onSubmit={login} className="space-y-5">
             <input
@@ -53,7 +52,6 @@ export default function Home() {
             </button>
           </form>
 
-          {/* footer links */}
           <div className="mt-6 text-center text-sm text-purple-700 space-y-1">
             <button className="block w-full py-2 rounded-lg bg-white/50 border border-purple-200">Continue with Demo</button>
             <button className="block w-full py-2 rounded-lg bg-white/50 border border-purple-200">Continue with Guest</button>
